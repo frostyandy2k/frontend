@@ -1,0 +1,43 @@
+<div class="registrysensor-dialog">
+  <form nz-form [formGroup]="validateForm">
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="tableName">表名</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="表名不能为空!">
+        <input nz-input formControlName="tableName" id="tableName" />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="sensorName" nzRequired>传感器名字</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="传感器名字不能为空!">
+        <input nz-input  id="sensorName" formControlName="sensorName" />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="function" nzRequired>传感器功能</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="传感器功能不能为空!">
+        <input nz-input id="function" formControlName="function" />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="type" nzRequired>类型</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="类型不能为空!">
+        <input nz-input id="type" formControlName="type" />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="description" nzRequired>描述</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input  id="description" formControlName="description" />
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+  <div class="edituser-dialog-footer">
+    <button nz-button nzSize="large" style="margin-right: 10px;" [nzType]="'default'"
+      (click)="handleCancel()">取消</button>
+    <button nz-button nzSize="large" [nzType]="'primary'" (click)="handleOk()">确认修改</button>
+  </div>
+</div>

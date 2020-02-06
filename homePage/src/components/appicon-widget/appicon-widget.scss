@@ -1,0 +1,71 @@
+appicon-widget {
+  .app-icon {
+    width: 7vw;
+    height: 7vw;
+    border: thick solid;
+    border-color: map-get($colors, disabled);
+    background-color: white;
+
+  }
+  .app_background {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: inherit;
+  }
+
+  .app_text p {
+    color: gray;
+    font-weight: bold;
+    font-size: 0.9vw;
+    text-align: center;
+  }
+
+  .app-previewer {
+    position: absolute;
+    min-width: 10vw;
+    // left: 7vw;
+    top: 0px;
+    // z-index: 100;
+  }
+
+  .app-previewer iframe {
+    overflow: auto;
+    width: 50vw;
+    height: 30vw;
+    border: thin solid $toolbar-background;
+  }
+
+  .widget-bar {
+    border: thin solid $toolbar-background;
+    font-weight: bold;
+    padding: 5px;
+    padding-bottom: 0px;
+    color: black;
+    background-color: lightgray;
+
+    overflow:auto;
+    font-size: 1.2vw;
+  }
+
+  .widget-control {
+    float: right;
+  }
+  button{
+    background-color: lightgray;
+  }
+
+  .smoke-screen-modal-on {
+    position: fixed;
+    display: none;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(128, 128, 150, 0.5);
+    z-index: 75;
+  }
+  .smoke-screen-modal-off {
+    display: none;
+  }
+
+}

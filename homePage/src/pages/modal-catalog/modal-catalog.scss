@@ -1,0 +1,30 @@
+page-modal-catalog {
+  .app-name {
+    width: 7vw;
+    height: 7vw;
+    text-align: center;
+    font-size: 0.9vw;
+  }
+  img {
+    width: 7vw;
+    height: 5vw;
+    background-color: white;
+  }
+
+ /* .searchbar-md .searchbar-input{
+    box-shadow: none;
+
+  }*/
+  ion-label{
+    box-shadow: none;
+  }
+  .card-md {
+    padding:0;
+    box-shadow: none;
+  }
+
+#error_text{
+  color:red;
+
+}
+}

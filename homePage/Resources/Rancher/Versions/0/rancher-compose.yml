@@ -1,0 +1,6 @@
+version: '2'
+
+catalog:
+  name: "de-kit-production-map-app"
+  version: "1.0"
+  description: "Production Map App"

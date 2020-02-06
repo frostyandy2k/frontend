@@ -1,0 +1,43 @@
+<div id="smoke-screen" class="smoke-screen-modal-on" hide-on-click [hidden]="smokescreen" (click)="hideMe($event)"
+     (onStatusChange)="hideMe($event)"></div>
+<ion-row #myBounds>
+  <!--<ng-template ngFor let-app [ngForOf]="apps" let-i="index"  >-->
+  <div *ngFor="let app of chosenApps; index as i" (started)="onStart($event,i)" (stopped)="onStop($event,i)"
+       [ngStyle]="app.onTopStyle()" [position]="{x: app.endPosition.x, y:app.endPosition.y}" ngDraggable
+       [bounds]="myBounds" [inBounds]="true" [outOfBounds]="{ top: false, right: false, bottom: true, left: false }">
+    <!--app.onTopStyle() test more-->
+    <div class="app-icon" [ngStyle]="app.setBackground()" (click)="previewHandler(app)">
+      <div [ngStyle]="app.setImageSize()" >
+        <div [ngStyle]="{'background-image':'url(' + app.imgUrl + ')'}" class="app_background" >
+        </div>
+      </div>
+      <div class="app_text">
+        <p>{{app.name}}</p>
+      </div>
+    </div>
+    <div class="app-previewer" [ngStyle]="app.previewStyle()">
+      <div class="widget-bar">{{app.name}}
+        <div class="widget-control">
+          <button icon-only (click)="loadURLinNewTab(app.url)">
+            <ion-icon name="open"></ion-icon>
+          </button>
+          <button icon-only (click)="undo(i)">
+            <ion-icon name="undo"></ion-icon>
+          </button>
+          <button icon-only (click)="delete(i)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+          <button icon-only (click)="app.previewToggle()">
+            <ion-icon name="close-circle"></ion-icon>
+          </button>
+
+        </div>
+      </div>
+      <iframe [src]="app.url | safeUrl"></iframe>
+
+    </div>
+
+  </div>
+
+  <!--</ng-template>-->
+</ion-row>

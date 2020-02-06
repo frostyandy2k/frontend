@@ -1,0 +1,24 @@
+page-modal-add {
+  .app-name {
+    width: 7vw;
+    height: 7vw;
+    text-align: center;
+    font-size: 0.9vw;
+  }
+  img {
+    width: 7vw;
+    height: 5vw;
+    background-color: white;
+  }
+  ion-img {
+    display: inline-block;
+    min-width: 7vw;;
+    min-height: 5vw;
+    background: #eee;
+  }
+
+#error_text{
+  color:red;
+
+}
+}

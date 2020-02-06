@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+   de-kit-production-map-app:
+        image: scaleit-app-pool.ondics.de:5000/scaleit-app-pool/de-kit-production-map-app:1.1
+        build: .
+        ports:
+          - "5100:80"
+        restart: always
+        environment:
+            - VIRTUAL_HOST=sensor-map.jit-systems.de # example jitcloud.de
+            - LETSENCRYPT_HOST=sensor-map.jit-systems.de # should be the same as VIRTUAL_HOST
+            - LETSENCRYPT_EMAIL=frostyandy2k@yahoo.com # example webmaster@agentur-murr.de
+        networks:
+            - nginx-proxy
+
+networks:
+   nginx-proxy:
+      external: true
+            
